@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Weather Dashboard
 
-## Getting Started
+A modern weather dashboard built with Next.js that allows users to check weather conditions and forecasts for multiple cities.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Real-time weather data from OpenWeather API
+- Search weather by city name
+- View detailed weather information including temperature, humidity, and wind speed
+- Save favorite cities for quick access
+- Responsive design for desktop and mobile devices
+
+## Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+- OpenWeather API key
+
+## Setup Instructions
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd next-weather-dashboard
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Create a `.env.local` file in the root directory and add your OpenWeather API key:
+   ```
+   NEXT_PUBLIC_OPENWEATHER_API_KEY=your_api_key_here
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+
+## Project Structure
+
+```
+next-weather-dashboard/
+├── src/
+│   ├── app/
+│   │   ├── layout.js      # Root layout component
+│   │   └── page.js        # Main page component
+│   ├── components/
+│   │   ├── WeatherDashboard.js        # Server-side weather component
+│   │   └── ClientWeatherDashboard.js  # Client-side weather component
+│   └── utils/
+│       └── api.js         # API utilities and weather data fetching
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## API Integration
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+The application uses the OpenWeather API to fetch weather data. The integration is handled in `src/utils/api.js` with the following main functions:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `getWeatherByCity(city)`: Fetches current weather data for a specific city
+- `getForecastByCity(city)`: Retrieves weather forecast data
+- `getWeatherForCities(cities)`: Fetches weather data for multiple cities
+- `getFavoriteCities()`: Manages locally stored favorite cities
+- `addToFavorites(city)`: Adds a city to favorites
+- `removeFromFavorites(city)`: Removes a city from favorites
 
-## Learn More
+The application uses both server-side and client-side components to optimize performance and provide real-time updates.
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Required environment variables:
+- `NEXT_PUBLIC_OPENWEATHER_API_KEY`: Your OpenWeather API key
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Feel free to submit issues and pull requests to improve the application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT License](LICENSE)
