@@ -2,6 +2,9 @@
 
 A modern weather dashboard built with Next.js that allows users to check weather conditions and forecasts for multiple cities.
 
+<img width="677" alt="Screenshot 2025-02-03 at 9 04 06 AM" src="https://github.com/user-attachments/assets/f013c689-bf0d-4465-9da3-942594f7baff" />
+
+
 ## Features
 
 - Real-time weather data from OpenWeather API
