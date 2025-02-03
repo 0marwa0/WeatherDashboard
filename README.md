@@ -81,10 +81,4 @@ The application uses both server-side and client-side components to optimize per
 Required environment variables:
 - `NEXT_PUBLIC_OPENWEATHER_API_KEY`: Your OpenWeather API key
 
-## Contributing
 
-Feel free to submit issues and pull requests to improve the application.
-
-## License
-
-[MIT License](LICENSE)
